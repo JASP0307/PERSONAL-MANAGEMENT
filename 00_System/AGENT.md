@@ -19,8 +19,9 @@
    those; otherwise take what I paste/describe in chat as the raw material.
 3. If the track folder doesn't exist yet, ask which existing track it belongs to,
    or offer to create a new one (see "When creating a new project").
-4. Append a dated entry to the track's NOTES.md with three parts: Raw, Summary,
-   and Connections.
+4. Append a dated entry to the track's NOTES.md with two parts: Summary and
+   Connections. Don't include the raw transcript/notes — condense straight to
+   the summary.
 5. For Connections: scan active projects in 10_Work/, 20_Projects/, and other
    30_Learning tracks for genuine overlap with this session's material. Link each
    with `[[project-name]]` and a one-line reason. If nothing clearly connects, say
