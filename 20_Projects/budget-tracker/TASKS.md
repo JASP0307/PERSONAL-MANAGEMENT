@@ -1,13 +1,15 @@
 # Budget Tracker — Tasks
 
 ## Open
-- [ ] Set up Google Cloud project: OAuth credentials for Gmail (read-only) + Sheets APIs; download credentials.json (added: 2026-07-19)
-- [ ] Set up Telegram bot via @BotFather; get token + chat id (added: 2026-07-19)
-- [ ] Create the Google Sheet (Transacciones + Presupuesto tabs) and put its ID in config.toml (added: 2026-07-19)
-- [ ] First live end-to-end run once credentials are in place (added: 2026-07-19)
 - [ ] Push app repo to personal GitHub (added: 2026-07-19)
+- [ ] Install cron job on the home server/Pi (every 15 min; see app/README.md) (added: 2026-07-19)
+- [ ] Publish the Google OAuth app to Production so the token doesn't expire every 7 days (added: 2026-07-19)
+- [ ] Optional: backfill older transactions (current fetch_window is 2d) (added: 2026-07-19)
 
 ## Done
+- [x] First live end-to-end run: 3 real transactions logged to the sheet, Telegram alerts sent, dedupe verified (done: 2026-07-19)
+- [x] Set up Google Cloud OAuth (Gmail read-only + Sheets), Telegram bot, and the Google Sheet (auto-created with live budget formulas) (done: 2026-07-19)
+- [x] Add gas-station merchant rules (TOTAL, TEXACO, SHELL → Combustible) (done: 2026-07-19)
 - [x] Scaffold Python app in app/ (own git repo): parsers + categorization tested against real emails, Gmail/Sheets/Telegram pipeline implemented (done: 2026-07-19)
 - [x] Set RD$ amounts for Fondo de Emergencia (10k) + Ahorros (16.74k); budget = 100% of income (done: 2026-07-19)
 - [x] Set monthly RD$ budget per category; income RD$61k, budgeted ~RD$34.3k, ~RD$26.7k unallocated (done: 2026-07-19)

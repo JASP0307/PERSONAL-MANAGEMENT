@@ -12,12 +12,13 @@ values per category. Based on that comparison, sends a Telegram message with the
 money left in the budget — or a warning when a budget limit is exceeded.
 
 ## Current state
-Build started 2026-07-19. Design locked: Gmail API (read-only) → parser →
-Google Sheets → Telegram, cron on the home server/Pi. Categories + monthly
-amounts set (budget = 100% of RD$61k income). Python app scaffolded in `app/`
-with parsers + categorization tested against real emails and the full
-Gmail/Sheets/Telegram pipeline implemented. Remaining: user-side Google Cloud
-OAuth, Telegram bot, and the Sheet, then a first live run.
+**Live as of 2026-07-19.** First end-to-end run logged 3 real transactions to
+the Google Sheet and sent Telegram alerts. Gmail OAuth (read-only), Sheets, and
+the Telegram bot are all configured; `config.toml` holds the real credentials
+(git-ignored). Two bugs found and fixed during the first run (Popular's nested
+HTML tables; date stored as serials breaking the month filter). Remaining:
+push the app repo to GitHub, install the cron job on the Pi, and publish the
+OAuth app to Production (else the token expires every 7 days).
 
 ## Key files
 - `TASKS.md` — open items
