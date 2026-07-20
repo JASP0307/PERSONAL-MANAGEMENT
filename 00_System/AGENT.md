@@ -17,17 +17,25 @@
    (don't attempt audio transcription — that's not set up).
 2. If raw notes already exist in a track's NOTES.md (jotted by hand), work from
    those; otherwise take what I paste/describe in chat as the raw material.
-3. If the track folder doesn't exist yet, ask which existing track it belongs to,
-   or offer to create a new one (see "When creating a new project").
-4. Append a dated entry to the track's NOTES.md with two parts: Summary and
-   Connections. Don't include the raw transcript/notes — condense straight to
-   the summary.
+3. Decide where it lives:
+   - If the material belongs to an existing multi-session track (e.g.
+     `rag-fundamentals/`), append to that track's NOTES.md.
+   - If it's a standalone topic (typically a single video), create it as a
+     single `30_Learning/<topic-name>.md` file — no folder, no CLAUDE.md. Ask
+     which existing track it belongs to if unclear before defaulting to a
+     standalone file.
+4. Append a dated entry (standalone file or track NOTES.md) with two parts:
+   Summary and Connections. Include the source URL. Don't include the raw
+   transcript/notes — condense straight to the summary.
 5. For Connections: scan active projects in 10_Work/, 20_Projects/, and other
-   30_Learning tracks for genuine overlap with this session's material. Link each
-   with `[[project-name]]` and a one-line reason. If nothing clearly connects, say
-   "no clear connections yet" — don't force a link.
-6. Never write into the connected project's own files — connections live only in
-   the learning track's notes.
+   30_Learning tracks/files for genuine overlap with this session's material.
+   Link each with `[[project-name]]` and a one-line reason. If nothing clearly
+   connects, say "no clear connections yet" — don't force a link.
+6. Never write into the connected project's own files — connections live only
+   in the learning note itself.
+7. If a standalone file grows into an ongoing multi-session topic, propose
+   converting it into a full track folder (per "When creating a new project")
+   before doing so.
 
 ## When I ask for a weekly review
 1. Regenerate DASHBOARD.md.
