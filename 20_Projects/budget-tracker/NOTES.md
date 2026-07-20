@@ -145,10 +145,8 @@ _Reference = partial spend seen in last month's email sample (not a full total).
 ### AHORRO
 | Category | Monthly budget (RD$) | Reference |
 |---|---|---|
-| 🚨 Fondo de Emergencia | _to fill_ | — |
-| 💰 Ahorros | _to fill_ | — |
-
-_~RD$26,740 was previously unallocated; these two lines should absorb it._
+| 🚨 Fondo de Emergencia | 10000 | — |
+| 💰 Ahorros | 16740 | — |
 
 ## Budget summary vs. income (2026-07-19)
 - **Monthly income: RD$61,000**
@@ -156,15 +154,11 @@ _~RD$26,740 was previously unallocated; these two lines should absorb it._
   Teléfono 810 + Diezmo 2,000 + Dinerito 5,000 = **~RD$24,960**
 - GASTOS VARIABLES: Salidas 4,000 + Delivery 600 + Mantenimiento 1,500 +
   Retiro Efectivo 1,200 + Otros 2,000 = **RD$9,300**
-- AHORRO: Fondo de Emergencia + Ahorros = **_to fill_** (should absorb the
-  ~RD$26,740 that was previously unallocated)
-- **Total budgeted so far: ~RD$34,260**; target = full RD$61,000 once AHORRO
-  amounts are set.
+- AHORRO: Fondo de Emergencia 10,000 + Ahorros 16,740 = **RD$26,740**
+- **Total budgeted: RD$61,000 = 100% of income.** Fully allocated.
 - FX assumption: RD$60 / US$1 (manual config value, revisit periodically).
 
 ## Open questions
-- **Set amounts for Fondo de Emergencia + Ahorros** so the budget totals the
-  full RD$61,000.
 - How to handle non-card fixed expenses (Renta, Diezmo, Dinerito, Fondo de
   Emergencia, Ahorros): manual sheet entry vs. assume-paid budget lines.
 - Telegram: single chat with a bot; polling vs. webhook (webhook needs a
