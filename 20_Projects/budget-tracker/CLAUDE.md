@@ -12,13 +12,13 @@ values per category. Based on that comparison, sends a Telegram message with the
 money left in the budget — or a warning when a budget limit is exceeded.
 
 ## Current state
-**Live as of 2026-07-19.** First end-to-end run logged 3 real transactions to
-the Google Sheet and sent Telegram alerts. Gmail OAuth (read-only), Sheets, and
-the Telegram bot are all configured; `config.toml` holds the real credentials
-(git-ignored). Two bugs found and fixed during the first run (Popular's nested
-HTML tables; date stored as serials breaking the month filter). Remaining:
-push the app repo to GitHub, install the cron job on the Pi, and publish the
-OAuth app to Production (else the token expires every 7 days).
+**Deployed and running as of 2026-07-19.** Gmail OAuth (read-only, Production),
+Google Sheets, and the Telegram bot are live; July was backfilled (20 txns) and
+the app repo is pushed to GitHub. A cron job runs every 15 min on an old Lenovo
+laptop (`scripts/run.sh`, flock-guarded; cron.service active). `config.toml`
+holds the real credentials (git-ignored).
+Remaining: stop the laptop from suspending (sudo — see app/README.md) so cron
+keeps firing; eventually migrate to a Raspberry Pi.
 
 ## Key files
 - `TASKS.md` — open items

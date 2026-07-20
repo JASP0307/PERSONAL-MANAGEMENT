@@ -1,10 +1,12 @@
 # Budget Tracker — Tasks
 
 ## Open
-- [ ] Install cron job on the home server/Pi (every 15 min; see app/README.md) (added: 2026-07-19)
-- [ ] Publish the Google OAuth app to Production so the token doesn't expire every 7 days (added: 2026-07-19)
+- [ ] Prevent the Lenovo laptop from suspending (lid switch + idle sleep) so cron keeps firing — needs sudo, see app/README.md "Running the service on a laptop" (added: 2026-07-19)
+- [ ] Eventually migrate the service from the Lenovo laptop to a Raspberry Pi (added: 2026-07-19)
 
 ## Done
+- [x] Install cron job (every 15 min, flock-guarded via scripts/run.sh); cron.service active (done: 2026-07-19)
+- [x] Publish the Google OAuth app to Production (token no longer expires every 7 days) (done: 2026-07-19)
 - [x] Push app repo to personal GitHub (done: 2026-07-19)
 - [x] Backfill current month (July): 20 transactions logged, duplicate guard added (skips same-content bank notifications) (done: 2026-07-19)
 - [x] First live end-to-end run: 3 real transactions logged to the sheet, Telegram alerts sent, dedupe verified (done: 2026-07-19)
