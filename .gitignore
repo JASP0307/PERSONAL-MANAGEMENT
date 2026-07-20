@@ -2,3 +2,6 @@
 .trash/
 .DS_Store
 Thumbs.db
+
+# budget-tracker app is its own git repo (pushed to personal GitHub separately)
+20_Projects/budget-tracker/app/

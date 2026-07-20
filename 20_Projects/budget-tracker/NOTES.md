@@ -9,6 +9,18 @@
 - **Only card consumption emails count** — "Comprobante Transacción Recurrente"
   receipts and statements are excluded from the budget.
 
+### 2026-07-19 — Build setup
+- **Language: Python** (Google API + Telegram libs, cron-friendly on the Pi).
+- **Code location: `20_Projects/budget-tracker/app/` — its own git repo**, kept
+  physically beside the notes for context but with git history separate from the
+  vault (pushed to the user's personal GitHub). The vault `.gitignore` excludes
+  `20_Projects/budget-tracker/app/` so the two repos never tangle.
+- **Alerts: on every transaction** — after each new charge is logged, send the
+  updated remaining budget for that category to Telegram.
+- **Gmail dedupe under read-only scope:** `gmail.readonly` can't add a
+  "processed" label, so processed message IDs are tracked outside Gmail (local
+  state file / a column in the Sheet) and a `newer_than` window bounds the fetch.
+
 ### 2026-07-19 — Architecture
 - **Gmail access: Gmail API** — OAuth with read-only scope
   (`gmail.readonly`), polling for new card notification emails. Most robust
