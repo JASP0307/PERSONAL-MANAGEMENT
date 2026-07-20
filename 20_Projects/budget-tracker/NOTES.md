@@ -9,6 +9,21 @@
 - **Only card consumption emails count** — "Comprobante Transacción Recurrente"
   receipts and statements are excluded from the budget.
 
+### 2026-07-19 — Duplicate notifications + backfill
+- **Duplicate guard:** banks sometimes send two notification emails for one
+  charge (seen: two Popular "Notificación de Consumo" for the same
+  PAYPAL *ALIPAYEU RD$4,520.39, ~30 min apart, different message ids). Message-id
+  dedupe can't catch these, so the tracker also skips a transaction whose content
+  signature (card + date + merchant + amount) already exists. Reversals carry the
+  opposite sign, so they never collide with the original charge.
+- **Backfill:** `python -m budgettracker.main --backfill` widens the Gmail window
+  to the 1st of the current month, logs only current-month transactions, and
+  stays silent on Telegram. Ran once for July: 20 transactions logged, 1
+  duplicate skipped, reversal pairs (PayPal, Alibaba) net to zero.
+- **Observation:** July "Otros / sin categoría" is far over budget
+  (RD$10,806 vs 2,000) — driven by one-off online shopping (Amazon, AliExpress
+  via PayPal). Consistent with the user's note that this month was exceptional.
+
 ### 2026-07-19 — Build setup
 - **Language: Python** (Google API + Telegram libs, cron-friendly on the Pi).
 - **Code location: `20_Projects/budget-tracker/app/` — its own git repo**, kept
