@@ -37,6 +37,19 @@
 - Declined variant exists (same subject, body says "declinada", card blocked) —
   parser must check Estatus/body and only log `Aprobada`
 
+### Banco Popular — ATM withdrawal (feeds "Retiro Efectivo")
+- From: `notificaciones@popularenlinea.com`, subject: `Notificación de Retiro`
+- Same table layout as Consumo, but the 4th column is **`Cajero Automatico`**
+  (ATM name) instead of `Comercio`: Monto | Moneda | Fecha | Cajero Automatico | Estatus
+- Sample row: `RD$600.00 | Peso dominicano | 16/05/2026 | BANCO POPULAR OF. AV LOS | Aprobada`
+- Same DD/MM/YYYY date format; card in greeting ("Visa Débito Clásica, terminada en 9710")
+- Every withdrawal → category **Retiro Efectivo** (the cash covers flowers,
+  car wash, etc. that can't be itemized further)
+- **⚠️ Delivery-address caveat:** the sample was a *forward*; the original
+  `Notificación de Retiro` was addressed to **juanab0307@gmail.com**, whereas
+  the Consumo emails arrive at jabner0703@gmail.com. Need to confirm whether
+  retiro notifications actually land in the tracked inbox — see open questions.
+
 ### Qik — purchases
 - From: `notificaciones@qik.do`, subject: `Usaste tu tarjeta de crédito Qik`
 - Key sentence: "Se hizo una transacción de **RD$ 2,031.75** en **AMAZON 1**…"
@@ -58,20 +71,21 @@
 - Personal emails from bank staff (e.g. `U*@bpd.com.do` card upsell)
 
 ### Gmail queries for the poller
-- Popular: `from:notificaciones@popularenlinea.com subject:"Notificación de Consumo"`
+- Popular consumo: `from:notificaciones@popularenlinea.com subject:"Notificación de Consumo"`
+- Popular retiro: `from:notificaciones@popularenlinea.com subject:"Notificación de Retiro"`
 - Qik: `from:notificaciones@qik.do subject:(Usaste OR reversó)`
 
 ## Categories
 
 ### GASTOS FIJOS (fixed monthly, confirmed 2026-07-19)
-| Category | Auto-tracked from card emails? |
-|---|---|
-| 🏠 Renta | Unlikely (transfer/cash, not a card swipe) |
-| 🛵 Combustible | Yes if paid by card (gas station merchant) |
-| 📺 Suscripciones | Yes (GOOGLE *Google One, ANTHROPIC* CLAUDE SUB, etc.) |
-| 📱 Teléfono | Yes if auto-charged to card |
-| 🙏 Diezmo | Unlikely (cash/transfer) |
-| ❤️ Dinerito de la Dooña | Unlikely (cash/transfer) |
+| Category                | Auto-tracked from card emails?                        |
+| ----------------------- | ----------------------------------------------------- |
+| 🏠 Renta                | Unlikely (transfer/cash, not a card swipe)            |
+| 🛵 Combustible          | Yes if paid by card (gas station merchant)            |
+| 📺 Suscripciones        | Yes (GOOGLE *Google One, ANTHROPIC* CLAUDE SUB, etc.) |
+| 📱 Teléfono             | Yes if auto-charged to card                           |
+| 🙏 Diezmo               | Unlikely (cash/transfer)                              |
+| ❤️ Dinerito de la Dooña | Unlikely (cash/transfer)                              |
 
 **Key implication:** the tracker only sees card-consumption emails. Fixed
 expenses paid by transfer or cash (Renta, Diezmo, Dinerito) won't be captured
@@ -80,29 +94,29 @@ paid or manually checked off. Only card-charged fixed expenses (Suscripciones,
 maybe Combustible/Teléfono) will auto-populate.
 
 ### GASTOS VARIABLES (confirmed 2026-07-19)
-| Category | Likely merchants (from last month) |
-|---|---|
-| 💖 Chantalita | (personal — merchants TBD) |
-| 🚿 Lavado vehículo | (car wash merchants TBD) |
-| 🎉 Salidas | TACO BELL, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON, POLLOS VICTORINA |
-| 🚗 Delivery | UBER EATS |
-| 🛠️ Mantenimiento | INVERSIONES TAKATA (auto parts?) |
-| (unmatched) | JUMBO, AMAZON, Alibaba.com, PAYPAL *, SMALL ROAD COMPANY, FUNERARIA BLANDINO |
+| Category | Fed by | Notes |
+|---|---|---|
+| 🎉 Salidas | card | Restaurants + girlfriend (Chantal) outings on card. Merchants: TACO BELL, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON, POLLOS VICTORINA |
+| 🚗 Delivery | card | UBER EATS, etc. |
+| 🛠️ Mantenimiento | card | INVERSIONES TAKATA (auto parts) |
+| 💵 Retiro Efectivo | ATM withdrawal email | Cash withdrawals; covers flowers for Chantal, car wash, and other cash spend that can't be itemized |
+| 🗂️ Otros / sin categoría | card | JUMBO (supermarket) + online shopping (AMAZON, Alibaba, PayPal) + any unmatched merchant. Telegram alert flags these so rules can grow |
+
+Decisions folded in (2026-07-19):
+- **Chantalita → merged into Salidas** (mostly outings). Cash flower purchases
+  surface as Retiro Efectivo, not a separate category.
+- **Lavado vehículo → dropped** (paid in cash → shows up as Retiro Efectivo).
+- **Supermarket + online shopping → Otros / sin categoría** (this month was an
+  exception, not worth their own categories).
 
 Mapping = editable rules (merchant substring → category); unmatched merchants
-go to a catch-all and the Telegram alert mentions them so the rule table grows
-over time.
-
-**Note:** several real merchants don't fit these five variable categories
-(supermarket, online shopping). Need to decide: add categories (e.g.
-Supermercado, Compras), fold them into an existing one, or let them sit in an
-"Otros / sin categoría" bucket. See open questions.
+go to Otros / sin categoría and the Telegram alert mentions them.
 
 ## Open questions
-- Where do supermarket (JUMBO) and online shopping (AMAZON, Alibaba, PayPal)
-  transactions go? They don't fit the five variable categories.
-- Confirm the merchant→category rules above (esp. Salidas vs Delivery split,
-  and what belongs to Chantalita / Lavado vehículo).
+- **Do `Notificación de Retiro` emails arrive at jabner0703@gmail.com?** The
+  sample was forwarded from juanab0307@gmail.com. If retiros go to the other
+  inbox, options: register jabner0703 with the bank, set a Gmail auto-forward,
+  or have the poller read both accounts.
 - Monthly budget amount (RD$) per category — both fixed and variable.
 - How to handle non-card fixed expenses (Renta, Diezmo, Dinerito): manual sheet
   entry vs. assume-paid budget lines.
