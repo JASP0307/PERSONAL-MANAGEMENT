@@ -116,30 +116,43 @@ go to Otros / sin categoría and the Telegram alert mentions them.
 _Reference = partial spend seen in last month's email sample (not a full total)._
 
 ### GASTOS FIJOS
-| Category | Monthly budget (RD$) | Reference |
-|---|---|---|
-| 🏠 Renta | | — |
-| 🛵 Combustible | | — |
-| 📺 Suscripciones | | ~US$1.99 + US$8.99 Google/others; Claude sub RD$1,217 |
-| 📱 Teléfono | | — |
-| 🙏 Diezmo | | — |
-| ❤️ Dinerito de la Dooña | | — |
+| Category                | Monthly budget (RD$)                                                | Reference                                             |
+| ----------------------- | ------------------------------------------------------------------- | ----------------------------------------------------- |
+| 🏠 Renta                | 5000                                                                | —                                                     |
+| 🛵 Combustible          | 10000                                                               | —                                                     |
+| 📺 Suscripciones        | ≈ 2150 (US$ @ RD$60: GoogleOne 1.99 + Google 8.99 + Spotify 4.50 = ~928; Claude RD$1,217) | ~US$1.99 + US$8.99 Google/others; Claude sub RD$1,217 |
+| 📱 Teléfono             | 810                                                                 | —                                                     |
+| 🙏 Diezmo               | 2000                                                                | —                                                     |
+| ❤️ Dinerito de la Dooña | 5000                                                                | —                                                     |
 
 ### GASTOS VARIABLES
-| Category | Monthly budget (RD$) | Reference (partial, last month) |
-|---|---|---|
-| 🎉 Salidas | | ~RD$4,030 (Taco Bell, Pollos Victorina, Mochizuki, Chancho Gusto, Griego Yogart, Heladería Bon) |
-| 🚗 Delivery | | ~RD$512 (Uber Eats) |
-| 🛠️ Mantenimiento | | ~RD$835 (Inversiones Takata) |
-| 💵 Retiro Efectivo | | RD$600 (one ATM withdrawal seen) |
-| 🗂️ Otros / sin categoría | | ~RD$5,300 (Jumbo, Amazon ×2, Small Road, Funeraria) |
+| Category                  | Monthly budget (RD$) | Reference (partial, last month)                                                                 |
+| ------------------------- | -------------------- | ----------------------------------------------------------------------------------------------- |
+| 🎉 Salidas                | 4000                 | ~RD$4,030 (Taco Bell, Pollos Victorina, Mochizuki, Chancho Gusto, Griego Yogart, Heladería Bon) |
+| 🚗 Delivery               | 600                  | ~RD$512 (Uber Eats)                                                                             |
+| 🛠️ Mantenimiento         | 1500                 | ~RD$835 (Inversiones Takata)                                                                    |
+| 💵 Retiro Efectivo        | 1200                 | RD$600 (one ATM withdrawal seen)                                                                |
+| 🗂️ Otros / sin categoría | 2000                 | ~RD$5,300 (Jumbo, Amazon ×2, Small Road, Funeraria)                                             |
+
+## Budget summary vs. income (2026-07-19)
+- **Monthly income: RD$61,000**
+- GASTOS FIJOS: Renta 5,000 + Combustible 10,000 + Suscripciones ~2,150 +
+  Teléfono 810 + Diezmo 2,000 + Dinerito 5,000 = **~RD$24,960**
+- GASTOS VARIABLES: Salidas 4,000 + Delivery 600 + Mantenimiento 1,500 +
+  Retiro Efectivo 1,200 + Otros 2,000 = **RD$9,300**
+- **Total budgeted: ~RD$34,260**
+- **Unallocated: ~RD$26,740 (~44% of income)** — currently no category. Likely
+  savings/investment or categories not yet defined. Worth an explicit
+  "Ahorro / Savings" line so the budget accounts for 100% of income.
+- FX assumption: RD$60 / US$1 (manual config value, revisit periodically).
 
 ## Open questions
+- **~44% of income is unallocated** — add an Ahorro/Savings category (and any
+  missing ones) so income is fully accounted for?
 - **Do `Notificación de Retiro` emails arrive at jabner0703@gmail.com?** The
   sample was forwarded from juanab0307@gmail.com. If retiros go to the other
   inbox, options: register jabner0703 with the bank, set a Gmail auto-forward,
   or have the poller read both accounts.
-- Monthly budget amount (RD$) per category — both fixed and variable.
 - How to handle non-card fixed expenses (Renta, Diezmo, Dinerito): manual sheet
   entry vs. assume-paid budget lines.
 - Telegram: single chat with a bot; polling vs. webhook (webhook needs a
