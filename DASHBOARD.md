@@ -1,5 +1,5 @@
 # Dashboard
-_Last generated: 2026-07-19_
+_Last generated: 2026-07-20_
 
 ## Active tasks by area
 
@@ -12,18 +12,15 @@ _Last generated: 2026-07-19_
 - [ ] pigeon-invaders: receive and test the 300mW green dot laser (added: 2026-07-19)
 
 **budget-tracker** (project TASKS.md):
-- [ ] Define scope: which 3 cards, what their notification emails look like (grab samples) (added: 2026-07-19)
-- [ ] Decide Gmail access method (Gmail API vs. mail forwarding/parsing) (added: 2026-07-19)
-- [ ] Decide budget worksheet format and location (Google Sheets vs. local spreadsheet) (added: 2026-07-19)
-- [ ] Design category mapping: transaction → budget category (added: 2026-07-19)
-- [ ] Set up Telegram bot for notifications (added: 2026-07-19)
-- [ ] Decide where the automation runs (schedule/host) (added: 2026-07-19)
+- [ ] Prevent the Lenovo laptop from suspending (lid switch + idle sleep) so cron keeps firing — needs sudo, see app/README.md (added: 2026-07-19)
+- [ ] Eventually migrate the service from the Lenovo laptop to a Raspberry Pi (added: 2026-07-19)
 
 ### 30_Learning
 - No open tasks logged in TASKS.md.
 
 ### 40_Life_Admin
-- No open tasks logged in TASKS.md.
+- [ ] Monthly budget review — last day of each month; see [[finances]] CLAUDE.md; next: 2026-07-31 (added: 2026-07-19)
+- [ ] Confirm Fondo de Emergencia target (months of expenses to cover) and define the purpose/target for Ahorros (added: 2026-07-19)
 
 ## Projects tracked (for context)
 - **10_Work**
@@ -31,10 +28,12 @@ _Last generated: 2026-07-19_
   - `ebo-xml-replicator` — working, in active use at TFC, now in maintenance mode.
 - **20_Projects**
   - `pigeon-invaders` — prototype 1 (red laser) tested; v2 in progress: green 300mW laser on order, CAD redesign, MG996R servos, custom PCB.
-  - `budget-tracker` — idea stage; Gmail card-notification parser → budget worksheet with Telegram alerts.
+  - `budget-tracker` — **deployed and running** (2026-07-19); Gmail parser → Google Sheet → Telegram alerts, cron every 15 min on Lenovo laptop. July backfilled (20 txns).
 - **30_Learning**
   - `rag-fundamentals` — active; 1 session logged (2026-07-18): sparse/dense/hybrid retrieval, connected to `agentic-rag-tool`.
+- **40_Life_Admin**
+  - `finances` — budget dashboard for `budget-tracker`; income RD$61k, ~RD$34.3k budgeted; monthly review due 2026-07-31.
 
 ## Stale items
-Nothing stale — all open tasks were added today (2026-07-19). Tasks untouched
+Nothing stale — all open tasks were added 2026-07-19 (1 day ago). Tasks untouched
 for more than 2 weeks will be flagged here.
