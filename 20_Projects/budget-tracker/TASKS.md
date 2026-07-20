@@ -1,7 +1,7 @@
 # Budget Tracker — Tasks
 
 ## Open
-- [ ] Confirm whether Notificación de Retiro emails reach jabner0703@gmail.com, or set up forwarding/second inbox (added: 2026-07-19)
+- [ ] Set RD$ amounts for Fondo de Emergencia + Ahorros (absorb the ~RD$26.7k unallocated) (added: 2026-07-19)
 - [ ] Set up Telegram bot for notifications (added: 2026-07-19)
 - [ ] Set up Google Cloud project: OAuth credentials for Gmail (read-only) + Sheets APIs (added: 2026-07-19)
 

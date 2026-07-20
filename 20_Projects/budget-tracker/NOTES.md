@@ -45,10 +45,9 @@
 - Same DD/MM/YYYY date format; card in greeting ("Visa Débito Clásica, terminada en 9710")
 - Every withdrawal → category **Retiro Efectivo** (the cash covers flowers,
   car wash, etc. that can't be itemized further)
-- **⚠️ Delivery-address caveat:** the sample was a *forward*; the original
-  `Notificación de Retiro` was addressed to **juanab0307@gmail.com**, whereas
-  the Consumo emails arrive at jabner0703@gmail.com. Need to confirm whether
-  retiro notifications actually land in the tracked inbox — see open questions.
+- **Inbox confirmed (2026-07-19):** retiro notifications reach jabner0703@gmail.com
+  like the other debit-card emails, so the poller sees them natively (the earlier
+  sample just happened to be forwarded from juanab0307).
 
 ### Qik — purchases
 - From: `notificaciones@qik.do`, subject: `Usaste tu tarjeta de crédito Qik`
@@ -112,6 +111,15 @@ Decisions folded in (2026-07-19):
 Mapping = editable rules (merchant substring → category); unmatched merchants
 go to Otros / sin categoría and the Telegram alert mentions them.
 
+### AHORRO (not card-tracked — set-and-assume budget lines, added 2026-07-19)
+| Category | Notes |
+|---|---|
+| 🚨 Fondo de Emergencia | Monthly transfer to emergency fund; not a card swipe |
+| 💰 Ahorros | General savings/investment; not a card swipe |
+
+These absorb the previously-unallocated income. Like Renta/Diezmo/Dinerito they
+won't generate card emails — enter as fixed monthly lines and treat as paid.
+
 ## Monthly budget amounts (RD$) — to fill in
 _Reference = partial spend seen in last month's email sample (not a full total)._
 
@@ -134,27 +142,31 @@ _Reference = partial spend seen in last month's email sample (not a full total).
 | 💵 Retiro Efectivo        | 1200                 | RD$600 (one ATM withdrawal seen)                                                                |
 | 🗂️ Otros / sin categoría | 2000                 | ~RD$5,300 (Jumbo, Amazon ×2, Small Road, Funeraria)                                             |
 
+### AHORRO
+| Category | Monthly budget (RD$) | Reference |
+|---|---|---|
+| 🚨 Fondo de Emergencia | _to fill_ | — |
+| 💰 Ahorros | _to fill_ | — |
+
+_~RD$26,740 was previously unallocated; these two lines should absorb it._
+
 ## Budget summary vs. income (2026-07-19)
 - **Monthly income: RD$61,000**
 - GASTOS FIJOS: Renta 5,000 + Combustible 10,000 + Suscripciones ~2,150 +
   Teléfono 810 + Diezmo 2,000 + Dinerito 5,000 = **~RD$24,960**
 - GASTOS VARIABLES: Salidas 4,000 + Delivery 600 + Mantenimiento 1,500 +
   Retiro Efectivo 1,200 + Otros 2,000 = **RD$9,300**
-- **Total budgeted: ~RD$34,260**
-- **Unallocated: ~RD$26,740 (~44% of income)** — currently no category. Likely
-  savings/investment or categories not yet defined. Worth an explicit
-  "Ahorro / Savings" line so the budget accounts for 100% of income.
+- AHORRO: Fondo de Emergencia + Ahorros = **_to fill_** (should absorb the
+  ~RD$26,740 that was previously unallocated)
+- **Total budgeted so far: ~RD$34,260**; target = full RD$61,000 once AHORRO
+  amounts are set.
 - FX assumption: RD$60 / US$1 (manual config value, revisit periodically).
 
 ## Open questions
-- **~44% of income is unallocated** — add an Ahorro/Savings category (and any
-  missing ones) so income is fully accounted for?
-- **Do `Notificación de Retiro` emails arrive at jabner0703@gmail.com?** The
-  sample was forwarded from juanab0307@gmail.com. If retiros go to the other
-  inbox, options: register jabner0703 with the bank, set a Gmail auto-forward,
-  or have the poller read both accounts.
-- How to handle non-card fixed expenses (Renta, Diezmo, Dinerito): manual sheet
-  entry vs. assume-paid budget lines.
+- **Set amounts for Fondo de Emergencia + Ahorros** so the budget totals the
+  full RD$61,000.
+- How to handle non-card fixed expenses (Renta, Diezmo, Dinerito, Fondo de
+  Emergencia, Ahorros): manual sheet entry vs. assume-paid budget lines.
 - Telegram: single chat with a bot; polling vs. webhook (webhook needs a
   reachable endpoint — polling is simpler on a home server).
 
