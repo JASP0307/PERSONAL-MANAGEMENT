@@ -112,6 +112,28 @@ Decisions folded in (2026-07-19):
 Mapping = editable rules (merchant substring → category); unmatched merchants
 go to Otros / sin categoría and the Telegram alert mentions them.
 
+## Monthly budget amounts (RD$) — to fill in
+_Reference = partial spend seen in last month's email sample (not a full total)._
+
+### GASTOS FIJOS
+| Category | Monthly budget (RD$) | Reference |
+|---|---|---|
+| 🏠 Renta | | — |
+| 🛵 Combustible | | — |
+| 📺 Suscripciones | | ~US$1.99 + US$8.99 Google/others; Claude sub RD$1,217 |
+| 📱 Teléfono | | — |
+| 🙏 Diezmo | | — |
+| ❤️ Dinerito de la Dooña | | — |
+
+### GASTOS VARIABLES
+| Category | Monthly budget (RD$) | Reference (partial, last month) |
+|---|---|---|
+| 🎉 Salidas | | ~RD$4,030 (Taco Bell, Pollos Victorina, Mochizuki, Chancho Gusto, Griego Yogart, Heladería Bon) |
+| 🚗 Delivery | | ~RD$512 (Uber Eats) |
+| 🛠️ Mantenimiento | | ~RD$835 (Inversiones Takata) |
+| 💵 Retiro Efectivo | | RD$600 (one ATM withdrawal seen) |
+| 🗂️ Otros / sin categoría | | ~RD$5,300 (Jumbo, Amazon ×2, Small Road, Funeraria) |
+
 ## Open questions
 - **Do `Notificación de Retiro` emails arrive at jabner0703@gmail.com?** The
   sample was forwarded from juanab0307@gmail.com. If retiros go to the other
