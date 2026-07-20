@@ -61,20 +61,40 @@
 - Popular: `from:notificaciones@popularenlinea.com subject:"Notificación de Consumo"`
 - Qik: `from:notificaciones@qik.do subject:(Usaste OR reversó)`
 
-## Proposed categories (draft 2026-07-19, from last month's real merchants)
+## Categories
+
+### GASTOS FIJOS (fixed monthly, confirmed 2026-07-19)
+| Category | Auto-tracked from card emails? |
+|---|---|
+| 🏠 Renta | Unlikely (transfer/cash, not a card swipe) |
+| 🛵 Combustible | Yes if paid by card (gas station merchant) |
+| 📺 Suscripciones | Yes (GOOGLE *Google One, ANTHROPIC* CLAUDE SUB, etc.) |
+| 📱 Teléfono | Yes if auto-charged to card |
+| 🙏 Diezmo | Unlikely (cash/transfer) |
+| ❤️ Dinerito de la Dooña | Unlikely (cash/transfer) |
+
+**Key implication:** the tracker only sees card-consumption emails. Fixed
+expenses paid by transfer or cash (Renta, Diezmo, Dinerito) won't be captured
+automatically — they should be entered as fixed budget lines and either assumed
+paid or manually checked off. Only card-charged fixed expenses (Suscripciones,
+maybe Combustible/Teléfono) will auto-populate.
+
+### GASTOS VARIABLES (draft from last month's real merchants — awaiting confirmation)
 | Category | Observed merchants |
 |---|---|
 | Supermercado | JUMBO PATIO EMBAJADA |
 | Comida fuera / delivery | UBER EATS, TACO BELL, POLLOS VICTORINA, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON |
 | Compras online | AMAZON, Alibaba.com, PAYPAL * |
-| Suscripciones | GOOGLE *Google One, ANTHROPIC* CLAUDE SUB |
 | Otros | INVERSIONES TAKATA, SMALL ROAD COMPANY, FUNERARIA BLANDINO, unmatched merchants |
 
 Mapping = editable rules (merchant substring → category); unmatched goes to
 Otros and the Telegram alert can mention it so the rule table grows over time.
 
 ## Open questions
-- Confirm category set + monthly budget amount per category (RD$).
+- Confirm GASTOS VARIABLES category set.
+- Monthly budget amount (RD$) per category — both fixed and variable.
+- How to handle non-card fixed expenses (Renta, Diezmo, Dinerito): manual sheet
+  entry vs. assume-paid budget lines.
 - Telegram: single chat with a bot; polling vs. webhook (webhook needs a
   reachable endpoint — polling is simpler on a home server).
 
