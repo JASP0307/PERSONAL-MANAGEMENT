@@ -11,6 +11,10 @@ into the monthly budget worksheet, and compares actual spend against budgeted
 values per category. Based on that comparison, sends a Telegram message with the
 money left in the budget — or a warning when a budget limit is exceeded.
 
+This is the **engineering side** (code, deployment). The budget itself, savings
+goals, and monthly reviews live in Life Admin → `40_Life_Admin/finances/`
+([[finances]]). That folder is the dashboard; this project is the engine.
+
 ## Current state
 **Deployed and running as of 2026-07-19.** Gmail OAuth (read-only, Production),
 Google Sheets, and the Telegram bot are live; July was backfilled (20 txns) and
