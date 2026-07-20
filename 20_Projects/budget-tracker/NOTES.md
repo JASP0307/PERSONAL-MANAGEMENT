@@ -2,6 +2,13 @@
 
 ## Decisions
 
+### 2026-07-19 — Scope
+- **US$ transactions are converted to RD$** and logged in a single RD$ budget.
+  Conversion rate kept as a config value in the sheet (updated manually now and
+  then) — simpler than a live FX API and accurate enough for budgeting.
+- **Only card consumption emails count** — "Comprobante Transacción Recurrente"
+  receipts and statements are excluded from the budget.
+
 ### 2026-07-19 — Architecture
 - **Gmail access: Gmail API** — OAuth with read-only scope
   (`gmail.readonly`), polling for new card notification emails. Most robust
@@ -54,12 +61,20 @@
 - Popular: `from:notificaciones@popularenlinea.com subject:"Notificación de Consumo"`
 - Qik: `from:notificaciones@qik.do subject:(Usaste OR reversó)`
 
+## Proposed categories (draft 2026-07-19, from last month's real merchants)
+| Category | Observed merchants |
+|---|---|
+| Supermercado | JUMBO PATIO EMBAJADA |
+| Comida fuera / delivery | UBER EATS, TACO BELL, POLLOS VICTORINA, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON |
+| Compras online | AMAZON, Alibaba.com, PAYPAL * |
+| Suscripciones | GOOGLE *Google One, ANTHROPIC* CLAUDE SUB |
+| Otros | INVERSIONES TAKATA, SMALL ROAD COMPANY, FUNERARIA BLANDINO, unmatched merchants |
+
+Mapping = editable rules (merchant substring → category); unmatched goes to
+Otros and the Telegram alert can mention it so the rule table grows over time.
+
 ## Open questions
-- Budget categories and monthly amounts per category.
-- US$ transactions: convert to RD$ at a fixed/manual rate, or track a separate
-  US$ column?
-- Include "Comprobante Transacción Recurrente" (bpd.com.do) payments in the
-  budget, or only card consumptions?
+- Confirm category set + monthly budget amount per category (RD$).
 - Telegram: single chat with a bot; polling vs. webhook (webhook needs a
   reachable endpoint — polling is simpler on a home server).
 
