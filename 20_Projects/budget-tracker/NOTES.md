@@ -79,19 +79,30 @@ automatically — they should be entered as fixed budget lines and either assume
 paid or manually checked off. Only card-charged fixed expenses (Suscripciones,
 maybe Combustible/Teléfono) will auto-populate.
 
-### GASTOS VARIABLES (draft from last month's real merchants — awaiting confirmation)
-| Category | Observed merchants |
+### GASTOS VARIABLES (confirmed 2026-07-19)
+| Category | Likely merchants (from last month) |
 |---|---|
-| Supermercado | JUMBO PATIO EMBAJADA |
-| Comida fuera / delivery | UBER EATS, TACO BELL, POLLOS VICTORINA, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON |
-| Compras online | AMAZON, Alibaba.com, PAYPAL * |
-| Otros | INVERSIONES TAKATA, SMALL ROAD COMPANY, FUNERARIA BLANDINO, unmatched merchants |
+| 💖 Chantalita | (personal — merchants TBD) |
+| 🚿 Lavado vehículo | (car wash merchants TBD) |
+| 🎉 Salidas | TACO BELL, MOCHIZUKI, CHANCHO GUSTO, GRIEGGO YOGART, HELADERIA BON, POLLOS VICTORINA |
+| 🚗 Delivery | UBER EATS |
+| 🛠️ Mantenimiento | INVERSIONES TAKATA (auto parts?) |
+| (unmatched) | JUMBO, AMAZON, Alibaba.com, PAYPAL *, SMALL ROAD COMPANY, FUNERARIA BLANDINO |
 
-Mapping = editable rules (merchant substring → category); unmatched goes to
-Otros and the Telegram alert can mention it so the rule table grows over time.
+Mapping = editable rules (merchant substring → category); unmatched merchants
+go to a catch-all and the Telegram alert mentions them so the rule table grows
+over time.
+
+**Note:** several real merchants don't fit these five variable categories
+(supermarket, online shopping). Need to decide: add categories (e.g.
+Supermercado, Compras), fold them into an existing one, or let them sit in an
+"Otros / sin categoría" bucket. See open questions.
 
 ## Open questions
-- Confirm GASTOS VARIABLES category set.
+- Where do supermarket (JUMBO) and online shopping (AMAZON, Alibaba, PayPal)
+  transactions go? They don't fit the five variable categories.
+- Confirm the merchant→category rules above (esp. Salidas vs Delivery split,
+  and what belongs to Chantalita / Lavado vehículo).
 - Monthly budget amount (RD$) per category — both fixed and variable.
 - How to handle non-card fixed expenses (Renta, Diezmo, Dinerito): manual sheet
   entry vs. assume-paid budget lines.
