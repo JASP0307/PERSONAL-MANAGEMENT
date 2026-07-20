@@ -1,11 +1,11 @@
 # Budget Tracker — Tasks
 
 ## Open
-- [ ] Push app repo to personal GitHub (added: 2026-07-19)
 - [ ] Install cron job on the home server/Pi (every 15 min; see app/README.md) (added: 2026-07-19)
 - [ ] Publish the Google OAuth app to Production so the token doesn't expire every 7 days (added: 2026-07-19)
 
 ## Done
+- [x] Push app repo to personal GitHub (done: 2026-07-19)
 - [x] Backfill current month (July): 20 transactions logged, duplicate guard added (skips same-content bank notifications) (done: 2026-07-19)
 - [x] First live end-to-end run: 3 real transactions logged to the sheet, Telegram alerts sent, dedupe verified (done: 2026-07-19)
 - [x] Set up Google Cloud OAuth (Gmail read-only + Sheets), Telegram bot, and the Google Sheet (auto-created with live budget formulas) (done: 2026-07-19)
