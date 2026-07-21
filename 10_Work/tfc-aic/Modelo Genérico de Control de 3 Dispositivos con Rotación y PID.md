@@ -1,3 +1,4 @@
+## Modelo Genérico de Control de 3 Dispositivos con Rotación y PID
 Este documento detalla la estructura y las consideraciones de ingeniería para la conversión de un modelo de control específico de Schneider Electric (diseñado originalmente para bombas de agua) en una plantilla estándar y genérica aplicable a cualquier sistema de tres dispositivos que requiera control PID y alternancia de desgaste.
 
 ---
