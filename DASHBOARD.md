@@ -31,9 +31,21 @@ _Last generated: 2026-07-20_
   - `budget-tracker` — **deployed and running** (2026-07-19); Gmail parser → Google Sheet → Telegram alerts, cron every 15 min on Lenovo laptop. July backfilled (20 txns).
 - **30_Learning**
   - `rag-fundamentals` — active; 1 session logged (2026-07-18): sparse/dense/hybrid retrieval, connected to `agentic-rag-tool`.
+  - `python-fastapi.md` — standalone note (new format, 2026-07-20): FastAPI basics (routes, Pydantic, auto docs); possible fit for `agentic-rag-tool` if it's ever exposed over HTTP.
 - **40_Life_Admin**
   - `finances` — budget dashboard for `budget-tracker`; income RD$61k, ~RD$34.3k budgeted; monthly review due 2026-07-31.
+
+## Workflow changes
+- Single-video/topic learning notes no longer get a full track folder — they're
+  now a standalone `30_Learning/<topic>.md` file, promotable to a track folder
+  later if the topic grows into an ongoing series. Multi-session tracks (e.g.
+  `rag-fundamentals/`) keep the folder + CLAUDE.md + NOTES.md pattern.
+  (`00_System/AGENT.md`, `30_Learning/CLAUDE.md`)
 
 ## Stale items
 Nothing stale — all open tasks were added 2026-07-19 (1 day ago). Tasks untouched
 for more than 2 weeks will be flagged here.
+
+## Outstanding (not a project task)
+- `git push` to `origin` (GitHub) is failing — no cached credentials and no SSH
+  key configured. Needs a PAT or SSH key set up before commits can be pushed.
