@@ -1,5 +1,5 @@
 # Dashboard
-_Last generated: 2026-07-20_
+_Last generated: 2026-07-20 (updated)_
 
 ## Active tasks by area
 
@@ -22,6 +22,27 @@ _Last generated: 2026-07-20_
 - [ ] Monthly budget review — last day of each month; see [[finances]] CLAUDE.md; next: 2026-07-31 (added: 2026-07-19)
 - [ ] Confirm Fondo de Emergencia target (months of expenses to cover) and define the purpose/target for Ahorros (added: 2026-07-19)
 
+**Master's — Embedded Systems (Spain)** (see [[GOALS]]):
+- [ ] Shortlist universities/programs for Master en Ingeniería de Sistemas Empotrados in Spain (added: 2026-07-20)
+- [ ] Check admission requirements per program (transcripts, language exam, GRE/equivalent, deadlines) (added: 2026-07-20)
+- [ ] Research tuition costs and scholarship/funding options (added: 2026-07-20)
+- [ ] Check Dominican citizen student visa requirements for Spain (added: 2026-07-20)
+- [ ] Request INTEC transcripts and line up recommendation letters (added: 2026-07-20)
+- [ ] Draft motivation letter / CV for applications (added: 2026-07-20)
+- [ ] Set target application and enrollment dates (added: 2026-07-20)
+
+**Job in Spain (while studying / after)**:
+- [ ] Research embedded systems job market in Spain (companies, cities, demand) (added: 2026-07-20)
+- [ ] Check work-while-studying rules and post-master work/residency visa options (added: 2026-07-20)
+- [ ] Update CV/LinkedIn for embedded systems roles targeting Spain/EU (added: 2026-07-20)
+
+**Return to DR to teach at INTEC**:
+- [ ] Contact INTEC Mecatrónica dept to learn requirements to become adjunct/professor (added: 2026-07-20)
+- [ ] Confirm whether the master's alone qualifies, or further credentials are needed (added: 2026-07-20)
+
+**Personal company in DR**:
+- [ ] Define initial idea/sector for a future personal company in DR (added: 2026-07-20)
+
 ## Projects tracked (for context)
 - **10_Work**
   - `agentic-rag-tool` — built and functional, not yet rolled out for real use.
@@ -34,6 +55,7 @@ _Last generated: 2026-07-20_
   - `python-fastapi.md` — standalone note (new format, 2026-07-20): FastAPI basics (routes, Pydantic, auto docs); possible fit for `agentic-rag-tool` if it's ever exposed over HTTP.
 - **40_Life_Admin**
   - `finances` — budget dashboard for `budget-tracker`; income RD$61k, ~RD$34.3k budgeted; monthly review due 2026-07-31.
+  - `GOALS.md` — long-term career plan added 2026-07-20: embedded systems master's in Spain → job in Spain → return to teach at INTEC → eventually a personal company in DR.
 
 ## Workflow changes
 - Single-video/topic learning notes no longer get a full track folder — they're
@@ -43,8 +65,8 @@ _Last generated: 2026-07-20_
   (`00_System/AGENT.md`, `30_Learning/CLAUDE.md`)
 
 ## Stale items
-Nothing stale — all open tasks were added 2026-07-19 (1 day ago). Tasks untouched
-for more than 2 weeks will be flagged here.
+Nothing stale — all open tasks were added 2026-07-19 or 2026-07-20 (0-1 days ago).
+Tasks untouched for more than 2 weeks will be flagged here.
 
 ## Outstanding (not a project task)
 - `git push` to `origin` (GitHub) is failing — no cached credentials and no SSH
