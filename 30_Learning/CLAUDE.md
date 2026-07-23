@@ -1,6 +1,14 @@
  # 30_Learning — Skill-Building
 
-Courses, books, and skills in progress. Two formats, depending on scope:
+Courses, books, and skills in progress.
+
+## Workflow
+- `/learn <topic>` — start a new topic (decides standalone vs. track, sets goal + milestones).
+- `/log-session [url]` — log a study session (dated Summary + Connections entry).
+- `/practice [topic]` — active-recall quiz or hands-on exercise from the notes.
+- `/learning-review` — progress + staleness review, continue/pause/drop, weekly focus.
+
+Two formats, depending on scope:
 - **Track folder** — ongoing, multi-session topics (a course, a book).
 - **Standalone .md file** — a single topic/video that doesn't need its own
   folder yet.
